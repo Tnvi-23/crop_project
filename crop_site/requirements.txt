@@ -1,3 +1,8 @@
 django>=5.0
 gunicorn
 psycopg2-binary
+Django
+gunicorn
+scikit-learn
+pandas
+numpy
