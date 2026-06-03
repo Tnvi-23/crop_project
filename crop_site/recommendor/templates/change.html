@@ -1,0 +1,63 @@
+{%extends "base.html"%}
+{% block content %}
+<div class="container">
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h3 class="mb-3"><i class="fa-solid fa-key"></i> Change Password </h3>
+          <form method="post" id="pwdForm">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label class="form-label">Current Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                <input type="password" name="current_password" id="curpwd" class="form-control" placeholder="******" />
+                <button class="btn btn-outline-secondary" type="button" id="toggleCur" title="Show/Hide"><i class="fa-regular fa-eye"></i></button>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">New Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                <input type="password" name="new_password" id="newpwd" class="form-control" placeholder="******" />
+                <button class="btn btn-outline-secondary" type="button" id="toggleNew1" title="Show/Hide"><i class="fa-regular fa-eye"></i></button>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Confirm Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-shield"></i></span>
+                <input type="password" name="confirm_password" id="conpwd" class="form-control" placeholder="******" />
+                <button class="btn btn-outline-secondary" type="button" id="toggleNew2" title="Show/Hide"><i class="fa-regular fa-eye"></i></button>
+              </div>
+            </div>
+            <button class="btn btn-success mt-3 w-100" type="submit" id="signupbtn">
+              <i class="fa-solid fa-save"></i> <span>Update Password</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+          <h5 class="mb-3"><i class="fa-solid fa-shield-halved"></i> Security Tips</h5>
+          <ul class="small text-muted mb-0">
+            <li>Use a unique password you don’t use elsewhere.</li>
+            <li>Avoid names, birthdays or common words.</li>
+            <li>Don’t reuse your current password.</li>
+            <li>Consider a password manager for strong, unique passwords.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    
+</script>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{%extends "base.html"%}
+{% load static %}
+
+{% block content %}
+<section class = "hero-gradient p-4 mb-5 text-white">
+  <div class="row">
+    <div class="col-lg-7">
+      <h1 class="display-5 fw-bold">Smart Crop Recommendation</h1>
+      <p class="lead text-white-50 mb-3">Enter soil & weather parameters to get instant,
+         Ml powered crop suggestion Clean UI, secure accounts, and detailed history - all in one place</p>
+      <div class="d-flex flex-wrap gap-2">
+        {% if user.is_authenticated and user.is_staff %}
+        <a href="" class="btn btn-outline-light"><i class="fa-solid fa-gauge "></i> Admin Dashboard</a>
+        <a href="" class="btn btn-outline-light"><i class="fa-solid fa-table "></i> View Predictions</a>
+        {% elif user.is_authenticated and not user.is_staff %}
+        <a href="" class="btn btn-outline-light"><i class="fa-solid fa-wand-magic-sparkles "></i> Predict now</a>
+        <a href="" class="btn btn-outline-light"><i class="fa-solid fa-clock-rotate-left "></i>My history</a>
+        {% else %}
+        <a href="" class="btn btn-outline-light"><i class="fa-solid fa-right-to-bracket "></i> User Login</a>    
+        <a href="" class="btn btn-outline-light"><i class="fa-solid fa-user-plus "></i> Create Account </a> 
+        <a href="" class="btn btn-outline-light"><i class="fa-solid fa-lock"></i> Admin Login</a>
+        {% endif %}
+      </div>
+      <div class="ms-3 small text-white-50">
+        <i class="fa-solid fa-shield-halved me-1"></i> Your predictions are saved privately in your account.
+      </div>
+    </div>
+    <div class="col-lg-5 mt-4">
+      <img src="{% static 'img/about.png'%}" style="max-height:350" class="img-fluid rounded-4 shadow-lg" id="ima"/>
+    </div>
+  </div>
+  <div class="row g-3 mt-4">
+    <div class="col-sm-6 col-lg-3">
+      <div class="stat-tile">
+        <div class="state-title">Users</div>
+        <div class="state-value">{{total_users}}</div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+      <div class="stat-tile">
+        <div class="state-title">Predictions</div>
+        <div class="state-value">{{total_predictions}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

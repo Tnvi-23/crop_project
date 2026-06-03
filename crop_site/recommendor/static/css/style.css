@@ -1,0 +1,22 @@
+.hero-gradient {
+    background: linear-gradient(135deg, #2e7d32, #66bb6a);
+    border-radius:18px;
+}
+#ima{
+    border-radius: 12px;
+}
+.stat-tile{
+    background: rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius: 1rem;
+    padding: .8rem 1rem;
+    color:#fff;
+}
+.state-title{
+    font-size: .8rem; opacity :.8;
+}
+.state-value{
+    font-weight:700;
+    font-size:1.6rem;
+    line-height: 1;
+}
